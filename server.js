@@ -21,10 +21,7 @@ const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
 app.get("/", (req, res) => {
-    db.select('*').from("users")
-            .then(data => {
-                return res.json(data);
-            });
+   req.send("its working");
 });
 
 app.post("/signin", signin.handleSignin(db, bcrypt));
